@@ -1,0 +1,64 @@
+@message-icon-prefix-cls: ~"@{vm-prefix}message-icon";
+
+@font-face {
+  font-family: "iconfont";
+  src: url('../../fonts/iconfont.eot?t=1500451929261'); /* IE9*/
+  src: url('../../fonts/iconfont.eot?t=1500451929261#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../fonts/iconfont.woff?t=1500451929261') format('woff'), /* chrome, firefox */ url('../../fonts/iconfont.ttf?t=1500451929261') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('../../fonts/iconfont.svg?t=1500451929261#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+[class^="@{message-icon-prefix-cls}"], [class*=" @{message-icon-prefix-cls}"] {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.@{message-icon-prefix-cls} {
+  &--success {
+    color: @message-success-color;
+    &:before {
+      content: "\e8e4";
+    }
+  }
+  &--error {
+    color: @message-danger-color;
+    &:before {
+      content: "\e8e7";
+    }
+  }
+  &--info {
+    color: @message-info-color;
+    &:before {
+      content: "\e8ea";
+    }
+  }
+  &--warning {
+    color: @message-warning-color;
+    &:before {
+      content: "\e8ec";
+    }
+  }
+  &--loading {
+    color: #bfcbd9;
+    animation: rotating 1s linear infinite;
+    &:before {
+      content: "\e8fd";
+    }
+  }
+  &--close {
+    &:before {
+      content: "\e8e8";
+    }
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
