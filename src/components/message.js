@@ -28,7 +28,7 @@ var Message = function (options) {
   }
 
   if (
-    options.zIndex
+    'zIndex' in options
     && typeof options.zIndex === 'number'
     && options.zIndex > -1
   ) {
@@ -64,7 +64,7 @@ var Message = function (options) {
     ? nextZIndex++
     : optsZIndex
   if (
-    global.top
+    'top' in global
     && typeof global.top === 'number'
   ) {
     instance.dom.style.top = `${global.top}px`
@@ -76,7 +76,7 @@ var Message = function (options) {
 Message.config = function (options) {
   global = options || {}
   if (
-    global.zIndex
+    'zIndex' in global
     && typeof global.zIndex === 'number'
     && global.zIndex > -1
   ) {
